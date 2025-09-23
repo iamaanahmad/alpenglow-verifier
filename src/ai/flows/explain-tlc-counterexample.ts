@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -41,12 +42,12 @@ const explainTLCounterexamplePrompt = ai.definePrompt({
   Follow these steps:
   1.  **Parse the Counterexample**: Analyze the state trace to understand the sequence of actions and state changes that lead to the violation.
   2.  **Identify the Failure Pattern**: Diagnose the root cause of the error. Common patterns include, but are not limited to:
-      - **Equivocation**: A node provides conflicting information to different peers.
-      - **Missed Quorum**: A decision was made without sufficient votes/signatures.
-      - **Split Brain**: Two or more partitions of the network make conflicting decisions.
-      - **Liveness Failure**: The system fails to make progress.
-      - **Incorrect State Update**: A variable was updated incorrectly.
-  3.  **Suggest a Fix**: Provide a specific, code-level recommendation for how to modify the TLA+ specification to prevent this counterexample. Explain why your suggested change resolves the issue.
+      - **Equivocation**: A node provides conflicting information to different peers, or an incorrect authorization model allows a non-leader to act as one.
+      - **Missed Quorum**: A decision was made without sufficient votes/signatures from the required stake.
+      - **Split Brain**: Two or more partitions of the network make conflicting decisions, often after a network partition.
+      - **Liveness Failure**: The system fails to make progress, getting stuck in a loop or deadlock.
+      - **Incorrect State Update**: A variable was updated incorrectly or an invariant was violated.
+  3.  **Suggest a Fix**: Based on the diagnosed pattern, provide a specific, code-level recommendation for how to modify the TLA+ specification to prevent this counterexample. Explain *why* your suggested change resolves the issue by referencing the trace.
 
   Here is the TLA+ specification and the counterexample:
 
@@ -61,7 +62,7 @@ const explainTLCounterexamplePrompt = ai.definePrompt({
   \`\`\`
 
   **Analysis and Suggested Fix:**
-  Provide your explanation below.
+  Provide your explanation below in clear, well-structured markdown. Start by stating the failure pattern you identified.
   `,
 });
 

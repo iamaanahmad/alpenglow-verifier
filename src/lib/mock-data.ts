@@ -1,5 +1,21 @@
 
+export type NodeState = {
+  id: number;
+  status: 'idle' | 'proposing' | 'voted' | 'byzantine';
+  [key: string]: any;
+};
+
+export type Message = {
+  from: number;
+  to: number;
+  type: 'PROPOSE' | 'VOTE';
+  [key: string]: any;
+};
+
 export type State = {
+  nodes: NodeState[];
+  messages: Message[];
+  finalizedBlocks: { [slot: string]: any };
   [variable: string]: any;
 };
 
@@ -18,40 +34,48 @@ export type Counterexample = {
 
 export const mockCounterexample: Counterexample = {
   id: "violation-123",
-  violatedProperty: "Safety: No two blocks finalized at the same slot.",
+  violatedProperty: "NoConflictingBlocksFinalized",
   tlaSpec: `
----- MODULE Alpenglow ----
-EXTENDS Naturals, FiniteSets, Sequences
+---------------- MODULE AlpenglowMain ----------------
 
-CONSTANTS Nodes, QuorumSize
+EXTENDS Naturals, FiniteSets, Sequences, TLC
 
-VARIABLES
-    blockchain,
-    votes,
-    leader
+CONSTANT Nodes, TotalStake, Quorum80, Quorum60
 
-Begin ==
-    /\ blockchain = <<>>
-    /\ votes = [n \in Nodes |-> {}]
-    /\ leader = 0
+VARIABLES stake, votes, finalized, leader, slot
+
+vars == << stake, votes, finalized, leader, slot >>
+
+Init ==
+    /\\ stake = [n \\in Nodes |-> TotalStake / Cardinality(Nodes)]
+    /\\ votes = [sl \\in Nat |-> [voter \\in Nodes |-> {}]]
+    /\\ finalized = {}
+    /\\ leader = CHOOSE n \\in Nodes : TRUE
+    /\\ slot = 1
+
+VotorVote(n, b, sl) ==
+    /\\ \\lnot \\exists b_v \\in votes[sl][n] : b_v.slot = sl
+    /\\ votes' = [votes EXCEPT ![sl][n] = votes[sl][n] \\cup {b}]
+
+CanFinalize(b, sl, quorum) ==
+    LET voters == {n \\in Nodes : b \\in votes[sl][n]}
+    IN \\sum_{n \\in voters} stake[n] >= quorum
+
+FinalizeBlock(b, sl) ==
+    /\\ \\lnot(sl \\in DOMAIN finalized)
+    /\\ CanFinalize(b, sl, Quorum60)
+    /\\ finalized' = [finalized EXCEPT ![sl] = b]
 
 Next ==
-    \/ Propose(leader)
-    \/ Vote(Nodes)
-    \/ Finalize(leader)
+    \\/ \\E n, b, sl: VotorVote(n, b, sl)
+    \\/ \\E b, sl: FinalizeBlock(b, sl)
 
-Propose(p) ==
-    /\ \exists b \in NewBlocks:
-        /\ ...
-
-Vote(n) ==
-    /\ ...
-====
+=======================================================
   `,
   trace: [
     {
       step: 1,
-      action: "Node 0 proposes Block A for slot 5",
+      action: "Node 0 (Leader) proposes Block A for slot 5.",
       state: {
         nodes: [
           { id: 0, status: "proposing", block: "A" },
@@ -59,13 +83,17 @@ Vote(n) ==
           { id: 2, status: "idle" },
           { id: 3, status: "byzantine" },
         ],
-        messages: [{ from: 0, to: 1, type: "PROPOSE" }, { from: 0, to: 2, type: "PROPOSE" }],
+        messages: [
+          { from: 0, to: 1, type: "PROPOSE", block: "A" },
+          { from: 0, to: 2, type: "PROPOSE", block: "A" },
+          { from: 0, to: 3, type: "PROPOSE", block: "A" }
+        ],
         finalizedBlocks: {},
       },
     },
     {
       step: 2,
-      action: "Nodes 1 and 2 vote for Block A",
+      action: "Honest nodes 1 and 2 receive Block A and vote for it.",
       state: {
         nodes: [
           { id: 0, status: "proposing", block: "A" },
@@ -73,13 +101,16 @@ Vote(n) ==
           { id: 2, status: "voted", vote: "A" },
           { id: 3, status: "byzantine" },
         ],
-        messages: [{ from: 1, to: 0, type: "VOTE" }, { from: 2, to: 0, type: "VOTE" }],
+        messages: [
+            { from: 1, to: 0, type: "VOTE" },
+            { from: 2, to: 0, type: "VOTE" }
+        ],
         finalizedBlocks: {},
       },
     },
     {
       step: 3,
-      action: "Byzantine node 3 equivocates, proposes Block B for slot 5 to node 2",
+      action: "Byzantine node 3 equivocates, proposing Block B for the same slot 5 to node 2, pretending to be a leader.",
       state: {
         nodes: [
           { id: 0, status: "proposing", block: "A" },
@@ -93,21 +124,21 @@ Vote(n) ==
     },
     {
       step: 4,
-      action: "Node 0 finalizes Block A. Node 2 is tricked and also votes for Block B, leading to split brain.",
+      action: "Node 2 incorrectly processes the message from node 3 and changes its vote to Block B.",
       state: {
         nodes: [
-          { id: 0, status: "idle" },
+          { id: 0, status: "proposing", block: "A" },
           { id: 1, status: "voted", vote: "A" },
           { id: 2, status: "voted", vote: "B" },
           { id: 3, status: "byzantine" },
         ],
         messages: [{ from: 2, to: 3, type: "VOTE" }],
-        finalizedBlocks: { "5": "A" },
+        finalizedBlocks: {},
       },
     },
     {
         step: 5,
-        action: "Byzantine node 3 uses vote from node 2 to finalize Block B",
+        action: "Node 0 has enough votes for Block A and finalizes it. At the same time, Byzantine node 3 has faked enough votes to finalize Block B.",
         state: {
           nodes: [
             { id: 0, status: "idle" },
@@ -116,7 +147,7 @@ Vote(n) ==
             { id: 3, status: "byzantine" },
           ],
           messages: [],
-          finalizedBlocks: { "5": ["A", "B"] }, // VIOLATION!
+          finalizedBlocks: { "5": ["A", "B"] }, // VIOLATION! Two blocks finalized in the same slot.
         },
     },
   ],
