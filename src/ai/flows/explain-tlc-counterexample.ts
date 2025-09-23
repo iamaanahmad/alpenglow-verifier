@@ -36,15 +36,32 @@ const explainTLCounterexamplePrompt = ai.definePrompt({
   output: {
     schema: ExplainTLCounterexampleOutputSchema,
   },
-  prompt: `You are an expert in TLA+ and the TLC model checker. Given a TLA+ specification and a TLC counterexample, your task is to explain how to rewrite the TLA+ specification to avoid the counterexample.
+  prompt: `You are an expert in TLA+ and the TLC model checker. Your task is to analyze a TLC-generated counterexample and provide a clear, actionable explanation for how to fix the TLA+ specification.
 
-  TLA+ Specification:
+  Follow these steps:
+  1.  **Parse the Counterexample**: Analyze the state trace to understand the sequence of actions and state changes that lead to the violation.
+  2.  **Identify the Failure Pattern**: Diagnose the root cause of the error. Common patterns include, but are not limited to:
+      - **Equivocation**: A node provides conflicting information to different peers.
+      - **Missed Quorum**: A decision was made without sufficient votes/signatures.
+      - **Split Brain**: Two or more partitions of the network make conflicting decisions.
+      - **Liveness Failure**: The system fails to make progress.
+      - **Incorrect State Update**: A variable was updated incorrectly.
+  3.  **Suggest a Fix**: Provide a specific, code-level recommendation for how to modify the TLA+ specification to prevent this counterexample. Explain why your suggested change resolves the issue.
+
+  Here is the TLA+ specification and the counterexample:
+
+  **TLA+ Specification:**
+  \`\`\`tlaplus
   {{tlaSpec}}
+  \`\`\`
 
-  TLC Counterexample:
+  **TLC Counterexample Trace (JSON):**
+  \`\`\`json
   {{tlcCounterexample}}
+  \`\`\`
 
-  Explanation: Provide a detailed explanation of the error and how to correct the TLA+ specification. Be specific and provide code examples if possible.
+  **Analysis and Suggested Fix:**
+  Provide your explanation below.
   `,
 });
 
