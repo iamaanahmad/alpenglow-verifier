@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +10,7 @@ const runs = [
   { id: 1, name: "Small_Network_Test", properties: 3, status: "Verified", duration: "2m 15s" },
   { id: 2, name: "Network_Partition_4_Nodes", properties: 3, status: "Failed", duration: "5m 30s" },
   { id: 3, name: "Leader_Failure_10_Nodes", properties: 3, status: "Verified", duration: "12m 45s" },
-  { id: 4, name: "High_Latency_Test", properties: 3, status: "Running", duration: "2m 1s" },
+  { id: 4, name: "High_Byzantine_Stake_Test", properties: 3, status: "Running", duration: "In Progress" },
 ];
 
 const StatusIcon = ({ status }: { status: string }) => {
