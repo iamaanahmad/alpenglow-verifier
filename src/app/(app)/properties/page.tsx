@@ -9,13 +9,13 @@ const safetyProperties = `
 \* @description: "Ensures no two conflicting blocks are ever finalized in the same slot.";
 NoConflictingBlocksFinalized ==
     \A sl \in DOMAIN finalized:
-        Cardinality(finalized[sl]) = 1
+        Cardinality(finalized[sl]) <= 1
 
 \* @type: safety;
 \* @description: "Guarantees that certificates are unique for each slot and cannot be forged.";
 CertificateUniqueness ==
     \A sl \in DOMAIN certs:
-        Cardinality(certs[sl]) = 1
+        Cardinality(certs[sl]) <= 1
 
 \* @type: safety;
 \* @description: "Prevents Byzantine nodes from causing validators to vote for conflicting blocks in the same slot.";
@@ -42,7 +42,7 @@ FastPathCompletion ==
             => <>(
                 \E sl \in Nat:
                     \E c \in certs[sl]:
-                        c.quorum = Quorum80
+                        c.quorum = "Quorum80"
                )
 `;
 
@@ -78,16 +78,16 @@ export default function PropertiesPage() {
 
       <Accordion type="single" collapsible defaultValue="safety" className="w-full">
         <AccordionItem value="safety">
-          <AccordionTrigger className="text-xl">
+          <AccordionTrigger className="text-xl font-medium">
             <div className="flex items-center gap-3">
               <ShieldCheck className="w-6 h-6 text-green-500" />
               Safety Properties
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <Card className="mt-4">
+            <Card className="mt-4 bg-card/80">
               <CardHeader>
-                <CardTitle>Safety</CardTitle>
+                <CardTitle>Ensuring Correctness</CardTitle>
                 <CardDescription>These properties ensure that nothing bad ever happens, such as finalizing conflicting blocks or accepting forged certificates.</CardDescription>
               </CardHeader>
               <CardContent>
@@ -97,16 +97,16 @@ export default function PropertiesPage() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="liveness">
-          <AccordionTrigger className="text-xl">
+          <AccordionTrigger className="text-xl font-medium">
             <div className="flex items-center gap-3">
               <Zap className="w-6 h-6 text-yellow-500" />
               Liveness Properties
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <Card className="mt-4">
+            <Card className="mt-4 bg-card/80">
               <CardHeader>
-                <CardTitle>Liveness</CardTitle>
+                <CardTitle>Ensuring Progress</CardTitle>
                 <CardDescription>These properties ensure that something good eventually happens, like the network making progress or reaching finality.</CardDescription>
               </Header>
               <CardContent>
@@ -116,16 +116,16 @@ export default function PropertiesPage() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="resilience">
-          <AccordionTrigger className="text-xl">
+          <AccordionTrigger className="text-xl font-medium">
             <div className="flex items-center gap-3">
               <HeartPulse className="w-6 h-6 text-blue-500" />
               Resilience Properties
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <Card className="mt-4">
+            <Card className="mt-4 bg-card/80">
               <CardHeader>
-                <CardTitle>Resilience</CardTitle>
+                <CardTitle>Ensuring Fault Tolerance</CardTitle>
                 <CardDescription>These properties define the fault tolerance limits of the protocol, ensuring it remains safe and live under adversarial conditions.</CardDescription>
               </Header>
               <CardContent>
@@ -138,4 +138,3 @@ export default function PropertiesPage() {
     </div>
   );
 }
-
