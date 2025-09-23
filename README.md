@@ -1,20 +1,30 @@
 # Alpenglow Verifier
 
-**A machine-checkable formal verification system for Solana’s Alpenglow consensus protocol.**
+**A machine-checkable formal verification system for Solana’s Alpenglow consensus protocol, built for the Superteam India Hackathon.**
 
 This project provides a formal verification system for Alpenglow, modeling its core components in TLA+ and verifying critical safety, liveness, and resilience properties. It includes an interactive web interface to configure models, inspect specifications, and analyze counterexamples with AI-powered assistance.
 
 ## Table of Contents
-1.  [Project Overview](#project-overview)
-2.  [Features](#features)
-3.  [Getting Started](#getting-started)
-    *   [Prerequisites](#prerequisites)
-    *   [Installation](#installation)
-    *   [Running the Application](#running-the-application)
-4.  [Project Structure](#project-structure)
-5.  [Technical Report Summary](#technical-report-summary)
-6.  [Video Walkthrough Script](#video-walkthrough-script)
-7.  [License](#license)
+1.  [Hackathon Context](#hackathon-context)
+2.  [Project Overview](#project-overview)
+3.  [Features](#features)
+4.  [Getting Started](#getting-started)
+5.  [Project Structure](#project-structure)
+6.  [Technical Report Summary](#technical-report-summary)
+7.  [Video Walkthrough Script](#video-walkthrough-script)
+8.  [License](#license)
+
+---
+
+## Hackathon Context
+
+This project is a submission for the **Superteam India Hackathon**, which challenges participants to transform the mathematical theorems from the Alpenglow whitepaper into machine-checkable proofs using formal methods.
+
+Our goal is to meet and exceed the hackathon's requirements by delivering:
+-   A **Complete Formal Specification** of Alpenglow in TLA+.
+-   **Machine-Verified Theorems** for all specified safety, liveness, and resilience properties.
+-   A robust **Model Checking and Validation** strategy.
+-   An interactive front-end application that makes the formal models and verification results accessible, understandable, and useful for developers and researchers.
 
 ---
 
@@ -26,11 +36,11 @@ This application serves as the front-end for that verification effort, making th
 
 ## Features
 
--   **Interactive TLA+ Viewer**: Browse the formal specification of Alpenglow's components.
--   **Formal Property Definitions**: Inspect the safety, liveness, and resilience properties being checked.
--   **Model Configuration**: Set up verification runs with different network sizes and adversarial conditions.
+-   **Interactive TLA+ Viewer**: Browse the formal specification of Alpenglow's components, including Votor, Rotor, and certificate logic.
+-   **Formal Property Definitions**: Inspect the safety, liveness, and resilience properties being checked, directly mapping to the theorems in the whitepaper.
+-   **Model Configuration**: Set up verification runs with different network sizes and adversarial conditions to test for edge cases.
 -   **Counterexample Analysis**: Interactively step through failure traces produced by the TLC model checker.
--   **AI-Powered Explanation**: Get human-readable explanations and suggested fixes for TLA+ specification errors from Genkit.
+-   **AI-Powered Explanation**: Get human-readable explanations and suggested fixes for TLA+ specification errors from Genkit, accelerating the debugging process.
 
 ## Getting Started
 
@@ -89,7 +99,7 @@ Open [http://localhost:9002](http://localhost:9002) in your browser to see the a
 ## Technical Report Summary
 
 ### 1. Introduction
-This report details the formal verification of the Alpenglow consensus protocol using TLA+. Our goal is to provide machine-checkable proofs of Alpenglow’s key safety, liveness, and resilience properties.
+This report details the formal verification of the Alpenglow consensus protocol using TLA+. Our goal is to provide machine-checkable proofs of Alpenglow’s key safety, liveness, and resilience properties as outlined in the Superteam India Hackathon requirements.
 
 ### 2. Formal Model
 We developed a TLA+ specification that models the following components:
@@ -119,19 +129,19 @@ We formally defined and verified the following properties under various network 
 
 **(Scene: Opening shot of the Alpenglow Verifier dashboard)**
 
-**Narrator**: "Welcome to the Alpenglow Verifier—a tool for formally verifying the correctness of Solana's Alpenglow consensus protocol. In this video, we'll walk through how it works."
+**Narrator**: "Welcome to the Alpenglow Verifier—a tool for formally verifying the correctness of Solana's Alpenglow consensus protocol. This project is our submission for the Superteam India Hackathon, and in this video, we'll walk through how it works."
 
 **(Cut to: Specification page)**
 
-**Narrator**: "Here on the **Specification** page, you can see the complete TLA+ model of Alpenglow. We've broken it down into modular components like Votor, Rotor, and the certificate logic to make it easier to understand."
+**Narrator**: "Here on the **Specification** page, you can see the complete TLA+ model of Alpenglow. We've broken it down into modular components like Votor, Rotor, and the certificate logic to make it easier to understand, fulfilling the hackathon's requirement for a complete formal spec."
 
 **(Cut to: Properties page)**
 
-**Narrator**: "The **Properties** page defines what we're trying to prove. We've formalized key guarantees, like 'no conflicting blocks can be finalized' (Safety) and 'the network always makes progress' (Liveness)."
+**Narrator**: "The **Properties** page defines what we're trying to prove. We've formalized key theorems from the whitepaper, like 'no conflicting blocks can be finalized' (Safety) and 'the network always makes progress' (Liveness)."
 
 **(Cut to: Dashboard, user fills out the form)**
 
-**Narrator**: "To start a verification run, you can configure a model on the **Dashboard**. You can set the network size, the number of Byzantine nodes, and choose from different adversarial scenarios."
+**Narrator**: "To start a verification run, you can configure a model on the **Dashboard**. You can set the network size, the number of Byzantine nodes, and choose from different adversarial scenarios, allowing us to perform the exhaustive model checking required by the challenge."
 
 **(Cut to: Verification Runs page, showing a 'Failed' run)**
 
@@ -143,11 +153,11 @@ We formally defined and verified the following properties under various network 
 
 **(Narrator clicks "Get Explanation")**
 
-**Narrator**: "But the real power comes from the AI-powered explanation. By clicking this button, the system sends the specification and the counterexample to an AI, which analyzes the trace and provides a human-readable explanation of what went wrong and how to fix it."
+**Narrator**: "But the real power comes from the AI-powered explanation. By clicking this button, the system sends the specification and the counterexample to an AI, which analyzes the trace and provides a human-readable explanation of what went wrong and how to fix it. This allows us to rapidly debug and strengthen the protocol's design, ensuring our proofs are rigorous."
 
 **(Scene: AI explanation appears)**
 
-**Narrator**: "As you can see, the AI identified a potential equivocation issue and is suggesting a specific change to our TLA+ spec. This allows us to rapidly debug and strengthen the protocol's design."
+**Narrator**: "As you can see, the AI identified a potential equivocation issue and is suggesting a specific change to our TLA+ spec. This demonstrates the completeness of our solution."
 
 **(Scene: Closing shot of the dashboard)**
 
