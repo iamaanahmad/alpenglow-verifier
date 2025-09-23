@@ -70,7 +70,7 @@ export default function PropertiesPage() {
               <CardHeader>
                 <CardTitle>Liveness</CardTitle>
                 <CardDescription>These properties ensure that something good eventually happens.</CardDescription>
-              </CardHeader>
+              </Header>
               <CardContent>
                 <CodeBlock code={livenessProperties} language="tlaplus" />
               </CardContent>
