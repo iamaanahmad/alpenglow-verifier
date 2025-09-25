@@ -477,30 +477,31 @@ npm run dev
 | [🔬 **Methodology Guide**](./docs/verification_methodology.md) | Technical approach | Researchers |
 | [📊 **Performance Benchmarks**](./docs/performance_benchmarks.md) | Detailed metrics | Engineers |
 | [🏆 **Theorem Proof Status**](./docs/theorem_proof_status.md) | Mathematical proofs | Academics |
-| [🎮 **User Guide**](./docs/user_guide.md) | How to use the system | Practitioners |
-| [🔧 **Developer Guide**](./docs/developer_guide.md) | Extend and modify | Contributors |
+| [🔍 **Analysis Guide**](./docs/counterexample_analysis_guide.md) | Debugging and analysis | Practitioners |
+| [📋 **Test Documentation**](./docs/comprehensive_test_documentation.md) | Testing procedures | Contributors |
 
 </div>
 
 ### **🎓 Learning Resources**
 
 <details>
-<summary>📚 <strong>Educational Materials</strong></summary>
+<summary>📚 <strong>Available Documentation</strong></summary>
 
-#### **🔰 Beginner Resources**
-- [What is Formal Verification?](./docs/formal_verification_intro.md)
-- [TLA+ Crash Course](./docs/tlaplus_tutorial.md)
-- [Consensus Protocols 101](./docs/consensus_basics.md)
+#### **🔰 Getting Started**
+- [Verification Methodology](./docs/verification_methodology.md) - Complete technical approach
+- [Comprehensive Test Documentation](./docs/comprehensive_test_documentation.md) - Testing procedures
+- [Results Interpretation Guide](./docs/results_interpretation_guide.md) - Understanding outputs
 
-#### **🎯 Intermediate Guides**
-- [Understanding Alpenglow](./docs/alpenglow_explained.md)
-- [Byzantine Fault Tolerance](./docs/byzantine_faults.md)
-- [Model Checking Techniques](./docs/model_checking.md)
+#### **🎯 Technical Analysis**
+- [Theorem Proof Status](./docs/theorem_proof_status.md) - Mathematical proofs
+- [Performance Benchmarks](./docs/performance_benchmarks.md) - Detailed metrics
+- [Counterexample Analysis Guide](./docs/counterexample_analysis_guide.md) - Debugging techniques
 
-#### **🚀 Advanced Topics**
-- [State Space Optimization](./docs/optimization_techniques.md)
-- [Statistical Model Checking](./docs/statistical_methods.md)
-- [Verification at Scale](./docs/scalability_analysis.md)
+#### **🚀 Advanced Resources**
+- [Verification Summary Report](./docs/verification_summary_report.md) - Complete results
+- [Blueprint](./docs/blueprint.md) - Project architecture
+- External: [TLA+ Official Documentation](https://lamport.azurewebsites.net/tla/tla.html)
+- External: [Learn TLA+ Tutorial](https://learntla.com/)
 
 </details>
 
@@ -554,8 +555,8 @@ We're building the future of consensus protocol verification! Here's how you can
 
 #### **1. Fork & Clone**
 ```bash
-git clone https://github.com/your-username/enhanced-alpenglow-verification.git
-cd enhanced-alpenglow-verification
+git clone https://github.com/iamaanahmad/alpenglow-verifier.git
+cd alpenglow-verifier
 ```
 
 #### **2. Set Up Development Environment**
@@ -573,14 +574,14 @@ npm install
 #### **3. Make Your Contribution**
 ```bash
 # Create feature branch
-git checkout -b feature/your-amazing-feature
+git checkout -b feature/amazing-feature
 
 # Make changes and test
 ./verify_comprehensive.ps1
 
 # Commit and push
 git commit -m "Add amazing feature"
-git push origin feature/your-amazing-feature
+git push origin feature/amazing-feature
 ```
 
 #### **4. Submit Pull Request**
@@ -727,9 +728,9 @@ This project is **100% open source** under the Apache 2.0 license, ensuring:
 
 ## 🚀 **Ready to Verify the Future?**
 
-[![Get Started](https://img.shields.io/badge/🚀%20Get%20Started-Now-brightgreen?style=for-the-badge)](./docs/getting_started.md)
+[![Get Started](https://img.shields.io/badge/🚀%20Get%20Started-Now-brightgreen?style=for-the-badge)](#-quick-start)
 [![View Results](https://img.shields.io/badge/📊%20View%20Results-Verification%20Report-blue?style=for-the-badge)](./docs/verification_summary_report.md)
-[![Join Community](https://img.shields.io/badge/🤝%20Join%20Community-Discord-purple?style=for-the-badge)](https://discord.gg/your-server)
+[![Join Community](https://img.shields.io/badge/🤝%20Join%20Community-GitHub%20Discussions-purple?style=for-the-badge)](https://github.com/iamaanahmad/alpenglow-verifier/discussions)
 
 ---
 

@@ -24,7 +24,7 @@ The Enhanced Alpenglow Formal Verification project is committed to maintaining t
 We encourage responsible disclosure of security vulnerabilities. Please:
 
 1. **DO NOT** create public GitHub issues for security vulnerabilities
-2. **DO** email security reports to: [security@your-domain.com]
+2. **DO** email security reports to: iamaanshaikh@cit.org.in
 3. **DO** provide detailed information about the vulnerability
 4. **DO** allow reasonable time for us to respond and fix the issue
 
@@ -72,8 +72,8 @@ We appreciate security researchers and will:
 
 ## 📞 Contact
 
-- **Security Email**: [security@your-domain.com]
-- **PGP Key**: [Link to PGP key]
+- **Security Email**: iamaanshaikh@cit.org.in
+- **GitHub Issues**: For non-security related issues
 - **Response Time**: Within 24 hours
 
 ---

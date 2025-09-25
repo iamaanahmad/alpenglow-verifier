@@ -19,7 +19,7 @@ We love your input! We want to make contributing to Enhanced Alpenglow Formal Ve
 ### Development Setup
 ```bash
 # Fork and clone the repository
-git clone https://github.com/your-username/alpenglow-verifier.git
+git clone https://github.com/iamaanahmad/alpenglow-verifier.git
 cd alpenglow-verifier
 
 # Install dependencies
@@ -192,7 +192,7 @@ Contributors will be:
 
 ### Understanding Alpenglow
 - [Alpenglow Whitepaper](https://solana.com/alpenglow)
-- [Consensus Protocols Overview](./docs/consensus_basics.md)
+- [Verification Methodology](./docs/verification_methodology.md)
 - [Our Verification Methodology](./docs/verification_methodology.md)
 
 ### Development Tools
@@ -205,7 +205,7 @@ Contributors will be:
 - **Discord**: Join our community server
 - **GitHub Issues**: For bugs and feature requests
 - **GitHub Discussions**: For questions and general discussion
-- **Email**: [maintainer-email] for private matters
+- **Email**: iamaanshaikh@cit.org.in for private matters
 
 ## 📄 License
 
