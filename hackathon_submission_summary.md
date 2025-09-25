@@ -2,7 +2,7 @@
 
 ## 🎯 Project Overview
 
-**Enhanced Alpenglow Formal Verification** is a comprehensive TLA+ specification and verification system for Solana's Alpenglow consensus protocol. This project transforms a basic specification into an award-winning formal verification system that proves all critical safety, liveness, and resilience properties.
+**Alpenglow Verifier** (https://github.com/iamaanahmad/alpenglow-verifier) is a comprehensive TLA+ specification and verification system for Solana's Alpenglow consensus protocol. This project transforms a basic specification into an award-winning formal verification system that proves all critical safety, liveness, and resilience properties.
 
 ## 🚀 Key Achievements
 
@@ -153,7 +153,7 @@
 
 ## 🏆 Conclusion
 
-The Enhanced Alpenglow Formal Verification project represents the gold standard for blockchain consensus protocol verification. With 100% property verification success, comprehensive Byzantine fault tolerance, and production-ready performance guarantees, this submission demonstrates the highest level of technical excellence and practical impact.
+The Alpenglow Verifier project (https://github.com/iamaanahmad/alpenglow-verifier) represents the gold standard for blockchain consensus protocol verification. With 100% property verification success, comprehensive Byzantine fault tolerance, and production-ready performance guarantees, this submission demonstrates the highest level of technical excellence and practical impact.
 
 **This is not just a verification system—it's a mathematical proof of Alpenglow's correctness and a foundation for the future of secure blockchain consensus.**
 

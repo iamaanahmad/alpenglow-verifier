@@ -19,8 +19,8 @@ We love your input! We want to make contributing to Enhanced Alpenglow Formal Ve
 ### Development Setup
 ```bash
 # Fork and clone the repository
-git clone https://github.com/your-username/enhanced-alpenglow-verification.git
-cd enhanced-alpenglow-verification
+git clone https://github.com/your-username/alpenglow-verifier.git
+cd alpenglow-verifier
 
 # Install dependencies
 npm install

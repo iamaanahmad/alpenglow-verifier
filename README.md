@@ -142,8 +142,8 @@ We built the world's first complete formal verification system for Alpenglow usi
 ### **⚡ One-Command Verification**
 ```bash
 # Clone and verify in one go
-git clone https://github.com/your-org/enhanced-alpenglow-verification.git
-cd enhanced-alpenglow-verification
+git clone https://github.com/iamaanahmad/alpenglow-verifier.git
+cd alpenglow-verifier
 ./run_full_verification.ps1
 ```
 
@@ -264,7 +264,7 @@ npm run dev
 <summary>🗂️ <strong>Detailed File Organization</strong></summary>
 
 ```
-enhanced-alpenglow-verification/
+alpenglow-verifier/
 ├── 📄 Core Specifications
 │   ├── Alpenglow.tla              # Main protocol specification (1,500+ lines)
 │   ├── Properties.tla             # All 13 verified properties
@@ -735,9 +735,9 @@ This project is **100% open source** under the Apache 2.0 license, ensuring:
 
 ### **🌟 Star this repository if it helped you!**
 
-[![GitHub stars](https://img.shields.io/github/stars/your-org/enhanced-alpenglow-verification?style=social)](https://github.com/your-org/enhanced-alpenglow-verification/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-org/enhanced-alpenglow-verification?style=social)](https://github.com/your-org/enhanced-alpenglow-verification/network/members)
-[![GitHub watchers](https://img.shields.io/github/watchers/your-org/enhanced-alpenglow-verification?style=social)](https://github.com/your-org/enhanced-alpenglow-verification/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/iamaanahmad/alpenglow-verifier?style=social)](https://github.com/iamaanahmad/alpenglow-verifier/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/iamaanahmad/alpenglow-verifier?style=social)](https://github.com/iamaanahmad/alpenglow-verifier/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/iamaanahmad/alpenglow-verifier?style=social)](https://github.com/iamaanahmad/alpenglow-verifier/watchers)
 
 **Built with ❤️ for the blockchain community**
 
