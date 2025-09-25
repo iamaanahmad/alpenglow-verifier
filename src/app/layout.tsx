@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description: 'Formal Verification System for Solana Alpenglow',
 };
 
+// Force cache busting
+const cacheVersion = Date.now();
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,12 +26,13 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="cache-version" content={cacheVersion.toString()} />
       </head>
-      <body className={cn('font-body antialiased min-h-screen')}>
+      <body className={cn('antialiased min-h-screen')}>
         <SidebarProvider>
           <Sidebar>
             <SidebarHeader>
-              <Link href="/dashboard" className="flex items-center gap-2 p-2" >
+              <Link href="/dashboard" className="flex items-center gap-2 p-2">
                 <Mountain className="w-8 h-8 text-primary" />
                 <h1 className="text-xl font-semibold text-primary">Alpenglow Verifier</h1>
               </Link>
