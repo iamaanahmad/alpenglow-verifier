@@ -43,3 +43,35 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+
+# TLA+ generated files
+*.toolbox/
+*TTrace*.tla
+*TTrace*.bin
+*TTrace*.json
+*.out
+*.err
+*.log
+states/
+performance_results/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.modified
