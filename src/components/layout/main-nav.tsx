@@ -6,7 +6,7 @@ import { LayoutDashboard, FileCode2, ShieldCheck, PlayCircle, BarChart3 } from '
 import Link from 'next/link';
 
 const navItems = [
-  { href: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/specification', label: 'Specification', icon: FileCode2 },
   { href: '/properties', label: 'Properties', icon: ShieldCheck },
   { href: '/verification', label: 'Verification Runs', icon: PlayCircle },
@@ -20,15 +20,16 @@ export default function MainNav() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} legacyBehavior passHref>
-            <SidebarMenuButton
-              isActive={pathname === item.href}
-              tooltip={item.label}
-            >
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === item.href}
+            tooltip={item.label}
+          >
+            <Link href={item.href}>
               <item.icon />
               <span>{item.label}</span>
-            </SidebarMenuButton>
-          </Link>
+            </Link>
+          </SidebarMenuButton>
         </SidebarMenuItem>
       ))}
     </SidebarMenu>
