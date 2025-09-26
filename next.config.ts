@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   },
   output: 'export',
   trailingSlash: false,
+  distDir: 'out',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -33,6 +34,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
 };
 
 export default nextConfig;
