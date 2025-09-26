@@ -15,4 +15,4 @@ Write-Host "• Clear browser cache: Ctrl+Shift+R" -ForegroundColor Cyan
 Write-Host "• Make sure deployment platform supports Next.js 15" -ForegroundColor Cyan
 Write-Host "• Use Node.js 18+ on deployment platform" -ForegroundColor Cyan
 
-Write-Host "`n✓ Check complete!" -ForegroundColor Green
+Write-Host "`nCheck complete!" -ForegroundColor Green
