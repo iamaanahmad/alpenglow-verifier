@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: false,
   distDir: 'out',
+  basePath: '/alpenglow-verifier',
+  assetPrefix: '/alpenglow-verifier/',
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -34,7 +36,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-
 };
 
 export default nextConfig;
