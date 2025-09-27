@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   // Dynamic configuration based on environment
-  ...(process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true' ? {
+  ...(process.env.NODE_ENV === 'production' && (process.env.GITHUB_PAGES === 'true' || process.env.CI) ? {
     output: 'export',
     trailingSlash: false,
     distDir: 'out',
