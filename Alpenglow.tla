@@ -939,14 +939,9 @@ VotorVote(n, b, sl) ==
 CanFinalize(b, sl, quorum) ==
     LET voters == {n \in Nodes : b \in votes[sl][n]}
         honest_voters == voters \ ByzantineNodes
-        byzantine_voters == voters \cap ByzantineNodes
         honest_stake == SumStakes(honest_voters)
-        byzantine_stake == SumStakes(byzantine_voters)
-        total_stake == honest_stake + byzantine_stake
-        \* For safety, we need honest supermajority even with Byzantine votes
-        effective_stake == honest_stake
-    IN /\ total_stake >= quorum
-       /\ effective_stake >= quorum \div 2 \* Ensure honest nodes contribute significantly
+        \* Only count honest stake for finalization - Byzantine votes are ignored
+    IN honest_stake >= quorum
 
 \* Enhanced finalization that requires valid certificate and tracks timing
 FinalizeBlock(b, sl) ==

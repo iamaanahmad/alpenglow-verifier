@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iamaanahmad.github.io/alpenglow-verifier/sitemap.xml

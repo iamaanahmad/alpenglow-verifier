@@ -12,18 +12,7 @@ export const metadata: Metadata = {
   title: 'Alpenglow Verifier',
   description: 'Formal Verification System for Solana Alpenglow',
   icons: {
-    icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' }
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
-    ],
-    other: [
-      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
-    ]
+    icon: '/favicon.ico'
   },
   manifest: '/site.webmanifest',
 };
@@ -50,7 +39,7 @@ export default function RootLayout({
         <SidebarProvider>
           <Sidebar>
             <SidebarHeader>
-              <Link href="/dashboard" className="flex items-center gap-2 p-2">
+              <Link href="/" className="flex items-center gap-2 p-2">
                 <Mountain className="w-8 h-8 text-primary" />
                 <h1 className="text-xl font-semibold text-primary">Alpenglow Verifier</h1>
               </Link>

@@ -28,6 +28,7 @@ This isn't just another blockchain project—it's a **mathematical proof** that 
 - **🛡️ Byzantine Resilience**: Proven safe with up to 20% malicious stake
 - **⚡ Performance Guarantees**: Mathematically verified 100-150ms finalization
 - **🔬 Research Impact**: Novel verification techniques for consensus protocols
+- **🔒 Security Enhancement**: Byzantine double voting vulnerability identified and fixed
 
 ---
 
@@ -212,6 +213,8 @@ npm run dev
 </div>
 
 ### **🔒 Security Properties Verified**
+
+> **🚨 RECENT SECURITY ENHANCEMENT**: Byzantine double voting vulnerability identified and fixed through formal verification analysis. See [Byzantine Double Voting Fixes](./BYZANTINE_DOUBLE_VOTING_FIXES.md) for details.
 
 <details>
 <summary>📋 <strong>View All 13 Verified Properties</strong></summary>

@@ -8,11 +8,14 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  output: 'export',
-  trailingSlash: false,
-  distDir: 'out',
-  basePath: '/alpenglow-verifier',
-  assetPrefix: '/alpenglow-verifier/',
+  // Dynamic configuration based on environment
+  ...(process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true' ? {
+    output: 'export',
+    trailingSlash: false,
+    distDir: 'out',
+    basePath: '/alpenglow-verifier',
+    assetPrefix: '/alpenglow-verifier/',
+  } : {}),
   images: {
     unoptimized: true,
     remotePatterns: [

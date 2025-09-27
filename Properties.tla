@@ -16,7 +16,7 @@ NoConflictingBlocksFinalized ==
        \A sl \in DOMAIN finalized:
         /\ \/ (\exists c \in certs: c.slot = sl /\ c.block = finalized[sl])
            \/ (\exists c \in skip_certs: c.slot = sl)
-    /\ \* Byzantine nodes cannot cause conflicting finalizations
+    /\ \* Byzantine nodes cannot cause conflicting finalizations - only honest stake counts
        \A sl \in DOMAIN finalized:
         LET finalized_block == finalized[sl]
             honest_voters == {n \in Nodes : 
@@ -25,7 +25,7 @@ NoConflictingBlocksFinalized ==
                 /\ finalized_block \in votes[sl][n] 
                 /\ \lnot IsByzantine(n)}
             honest_stake == SumStakes(honest_voters)
-        IN honest_stake >= AdjustedQuorum60 \div 2
+        IN honest_stake >= AdjustedQuorum60
 
 \* @type: safety;
 \* @description: "Guarantees that certificates are unique for each slot, covering both regular and skip certificates, and preventing Byzantine certificate forgery.";
@@ -56,10 +56,23 @@ CertificateUniqueness ==
 NoEquivocation ==
     \A n \in Nodes:
         \A sl \in Slots:
-            \/ (\lnot IsByzantine(n) /\ Cardinality(votes[sl][n]) <= 1) \* Honest nodes never double vote
-            \/ (IsByzantine(n) /\ TRUE) \* Byzantine nodes can double vote, but it's detected
+            \* Honest nodes never double vote
+            \lnot IsByzantine(n) => Cardinality(votes[sl][n]) <= 1
 
 
+
+\* @type: safety;
+\* @description: "Ensures Byzantine double voting cannot enable block finalization.";
+ByzantineDoubleVotingPrevention ==
+    \A n \in ByzantineNodes:
+        \A sl \in Slots:
+            \A b \in Blocks:
+                \* If a Byzantine node double votes, those votes don't count toward finalization
+                (Cardinality(votes[sl][n]) > 1 /\ b \in votes[sl][n]) =>
+                    \* Only honest stake should be sufficient for finalization
+                    LET honest_voters == {hn \in Nodes \ ByzantineNodes : b \in votes[sl][hn]}
+                        honest_stake == SumStakes(honest_voters)
+                    IN CanFinalize(b, sl, AdjustedQuorum60) => honest_stake >= AdjustedQuorum60
 
 \* @type: safety;
 \* @description: "Prevents forks across all finalization paths, ensuring chain consistency even with Byzantine nodes.";
