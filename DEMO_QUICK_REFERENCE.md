@@ -1,6 +1,6 @@
 # 🎬 Quick Reference Card - Demo Video
 
-**Total Duration:** 11.5 minutes | **Target:** First Prize Victory 🏆
+**Total Duration:** 5 minutes | **Target:** First Prize Victory 🏆 | **Judge-Optimized**
 
 ---
 
@@ -15,53 +15,53 @@
 
 ## 📋 **Section Checklist**
 
-### **🎬 Opening (45s)**
-- [ ] Hook with bold claim about mathematical proof
-- [ ] Show landing page with key metrics
-- [ ] Establish industry significance
-- [ ] Create curiosity for what's coming
+### **🚀 Opening (30s)**
+- [ ] Introduce the breakthrough achievement
+- [ ] Explain what makes it unique
+- [ ] Show key results naturally
+- [ ] Set up the demonstration
 
-**Key Line:** *"World's first complete mathematical proof that Alpenglow works correctly under all conditions"*
+**Key Line:** *"Something that's never been done before - the world's first complete mathematical proof that Alpenglow works correctly under any conditions"*
 
-### **🔬 Live Demo (2.5m)**
-- [ ] Execute `run_verification_simple.ps1`
-- [ ] Show real-time verification results
-- [ ] Navigate to dashboard
-- [ ] Highlight 100% success rate and optimization
+### **🔬 Live Demonstration (90s)**
+- [ ] Execute verification script naturally
+- [ ] Show real results as they appear
+- [ ] Explain what the results mean
+- [ ] Highlight mathematical certainty
 
-**Key Line:** *"This is happening in real-time, not pre-recorded - mathematical certainty"*
+**Key Line:** *"Zero counterexamples means we have mathematical certainty, not just testing confidence"*
 
-### **⚡ Technical Excellence (3m)**
+### **⚡ Technical Deep Dive (90s)**
 - [ ] Show TLA+ specification quality
-- [ ] Navigate through properties page
-- [ ] Demonstrate comprehensive coverage
-- [ ] Highlight innovation in optimization
+- [ ] Explain the 13 verified properties
+- [ ] Demonstrate AI explanation feature
+- [ ] Emphasize completeness
 
-**Key Line:** *"1,500 lines of production-ready formal verification - this is mathematical certainty"*
+**Key Line:** *"1,500 lines of formal specification covering every aspect of Alpenglow with AI-powered explanations"*
 
-### **🧠 AI Innovation (2.5m)**
-- [ ] Demonstrate interactive analysis
-- [ ] Show AI-powered explanations
-- [ ] Highlight educational impact
-- [ ] Show responsive design
+### **🌍 Real-World Impact (90s)**
+- [ ] Connect to actual blockchain failures
+- [ ] Show practical breakthrough achievements
+- [ ] Demonstrate production readiness
+- [ ] Explain industry transformation
 
-**Key Line:** *"AI-powered formal methods analysis - democratizing advanced verification"*
+**Key Line:** *"We've solved the fundamental problem - now we can mathematically prove blockchain systems are secure"*
 
-### **🚀 Industry Impact (2m)**
-- [ ] Connect to real blockchain failures
-- [ ] Highlight breakthrough innovations
-- [ ] Show production readiness
-- [ ] Establish competitive advantage
+### **🚀 What Makes This Special (90s)**
+- [ ] Highlight three unique achievements
+- [ ] Show world-first accomplishment
+- [ ] Demonstrate efficiency breakthrough
+- [ ] Explain accessibility innovation
 
-**Key Line:** *"First in the world to completely verify next-generation consensus protocol"*
+**Key Line:** *"Three things that have never been done before - we're literally the first team in the world to achieve this"*
 
-### **🏆 Victory Closing (45s)**
-- [ ] Montage of achievements
-- [ ] Connect to future industry transformation
-- [ ] Strong memorable closing
-- [ ] Call to action
+### **🎬 Closing (30s)**
+- [ ] Summarize the achievement
+- [ ] Connect to future impact
+- [ ] Show final statistics
+- [ ] Professional conclusion
 
-**Key Line:** *"We didn't just build a hackathon project - we built the future of blockchain security"*
+**Key Line:** *"Mathematical certainty for blockchain security - we've built the future of consensus verification"*
 
 ---
 

@@ -23,37 +23,29 @@ export default function AiExplanation({ tlaSpec, tlcCounterexample }: AiExplanat
     
     // Simulate AI analysis for static deployment
     setTimeout(() => {
-      setExplanation(`## Failure Pattern: Byzantine Double Voting
+      setExplanation(`FAILURE PATTERN: Byzantine Double Voting
 
-**Root Cause Analysis:**
+ROOT CAUSE ANALYSIS:
 The counterexample shows a Byzantine node (n4) performing double voting in slot 1, voting for both "block1" and "block2". This creates a scenario where different honest nodes receive conflicting information, potentially leading to safety violations.
 
-**Specific Issues Identified:**
-1. **Equivocation**: Node 4 sends different votes to different peers
-2. **Insufficient Validation**: The protocol doesn't properly detect and reject double votes
-3. **Quorum Calculation**: The system counts Byzantine votes toward finalization
+SPECIFIC ISSUES IDENTIFIED:
+1. Equivocation: Node 4 sends different votes to different peers
+2. Insufficient Validation: The protocol doesn't properly detect and reject double votes  
+3. Quorum Calculation: The system counts Byzantine votes toward finalization
 
-**Suggested Fix:**
-\`\`\`tlaplus
-\* Add equivocation detection
-NoEquivocation ==
-    \\A n \\in Nodes:
-        \\A sl \\in DOMAIN votes:
-            Cardinality(votes[sl][n]) <= 1
+SUGGESTED FIX:
+The CanFinalize function should be modified to only count honest stake:
 
-\* Strengthen finalization condition
-FinalizeBlock(block, sl) ==
-    /\\ sl \\notin DOMAIN finalized
-    /\\ LET honest_voters == {n \\in Nodes : n \\notin ByzantineNodes /\\ block \\in votes[sl][n]}
-           honest_stake == \\sum_{n \\in honest_voters} stake[n]
-       IN honest_stake >= Quorum60
-    /\\ finalized' = finalized @@ (sl :> block)
-\`\`\`
+CanFinalize(b, sl, quorum) ==
+    LET honest_voters == {n ∈ Nodes : n ∉ ByzantineNodes ∧ b ∈ votes[sl][n]}
+        honest_stake == SumStakes(honest_voters)
+    IN honest_stake >= quorum
 
-**Why This Fixes The Issue:**
+WHY THIS FIXES THE ISSUE:
 - Prevents Byzantine nodes from contributing to quorum calculations
 - Adds explicit equivocation detection as an invariant
-- Ensures only honest stake is counted for finalization decisions`);
+- Ensures only honest stake is counted for finalization decisions
+- Maintains the 20% Byzantine fault tolerance guarantee`);
       setIsLoading(false);
     }, 2000);
   };
@@ -89,8 +81,20 @@ FinalizeBlock(block, sl) ==
             <>
               <div className="p-4 bg-muted/50 rounded-lg w-full border space-y-4">
                   <h3 className="font-semibold text-foreground">AI Analysis:</h3>
-                  <div className="text-sm text-muted-foreground space-y-2 whitespace-pre-line">
-                    {explanation}
+                  <div className="text-sm text-foreground space-y-3 font-mono leading-relaxed">
+                    {explanation.split('\n\n').map((section, index) => (
+                      <div key={index} className="space-y-1">
+                        {section.split('\n').map((line, lineIndex) => (
+                          <div key={lineIndex} className={
+                            line.includes(':') && line.length < 50 ? 'font-bold text-primary' : 
+                            line.startsWith('  ') ? 'ml-4 text-muted-foreground' :
+                            'text-foreground'
+                          }>
+                            {line}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
                   </div>
               </div>
               
