@@ -120,32 +120,59 @@
 ---
 
 ### **🚀 What Makes This Special (90 seconds)**
-**[VISUAL: Show unique achievements and innovations]**
+
+#### **Opening Statement (10 seconds)**
+**[VISUAL ACTION: Navigate to your main dashboard page]**
+**[SCREEN SHOWS: Dashboard with verification results summary]**
 
 **Script:**
 *"What makes this project stand out? Three things that have never been done before."*
 
-**[VISUAL: Highlight first achievement]**
+#### **First Achievement - World's First (25 seconds)**
+**[VISUAL ACTION: Scroll down to show the verification results table]**
+**[SCREEN SHOWS: Table showing all your configurations with "PASSED" status]**
+**[ZOOM IN: On the "100% Success Rate" metric]**
 
+**Script:**
 *"First - this is the only complete formal verification of Alpenglow that exists anywhere. We're literally the first team in the world to achieve this."*
 
-**[VISUAL: Highlight second achievement]**
+**[VISUAL ACTION: Click on one of the verification results to show details]**
+**[SCREEN SHOWS: Detailed breakdown of properties verified]**
 
+#### **Second Achievement - 85% Optimization (25 seconds)**
+**[VISUAL ACTION: Navigate to your technical documentation or README]**
+**[SCREEN SHOWS: Section about performance optimization]**
+**[HIGHLIGHT: Text mentioning "85% state space reduction"]**
+
+**Script:**
 *"Second - we've made verification 85% more efficient through novel optimization techniques. What used to be computationally impossible is now practical."*
 
-**[VISUAL: Highlight third achievement]**
+**[VISUAL ACTION: Show a comparison chart or metrics]**
+**[SCREEN SHOWS: Performance benchmarks or optimization results]**
 
+#### **Third Achievement - AI Integration (25 seconds)**
+**[VISUAL ACTION: Navigate to /analysis page]**
+**[SCREEN SHOWS: The counterexample analysis interface]**
+**[CLICK: "Get Explanation" button to trigger AI analysis]**
+
+**Script:**
 *"Third - we've made formal methods accessible through AI-powered explanations. Complex mathematical proofs become understandable to anyone."*
 
-**[VISUAL: Show the complete system working together]**
+**[VISUAL ACTION: Show the AI explanation appearing]**
+**[SCREEN SHOWS: Plain text explanation of the Byzantine double voting issue]**
 
+#### **Unified System View (5 seconds)**
+**[VISUAL ACTION: Quick montage - switch between dashboard, properties page, and analysis]**
+**[SCREEN SHOWS: Rapid transitions showing different parts of your system]**
+
+**Script:**
 *"Put it all together and you have something unprecedented: mathematical certainty about blockchain security that's both practical and accessible."*
 
 **Visual Effects:**
-- 🎯 **Clear achievement callouts**
-- 📊 **Innovation metrics** 
-- 🤖 **AI demonstration**
-- 🌟 **Unified system view**
+- 🎯 **Zoom effects** on key metrics (100%, 85%, AI features)
+- 📊 **Highlight boxes** around important numbers
+- 🤖 **Loading animation** when AI explanation appears
+- 🌟 **Quick fade transitions** between pages
 
 ---
 
