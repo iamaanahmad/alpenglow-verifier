@@ -1,21 +1,17 @@
 {
-  "name": "Alpenglow Verifier",
-  "short_name": "Alpenglow",
-  "description": "Formal Verification System for Solana Alpenglow Consensus Protocol",
+  "name": "Alpenglow Verifier - Formal Verification System",
+  "short_name": "Alpenglow Verifier",
+  "description": "World's first complete formal verification of Solana's Alpenglow consensus protocol with mathematical guarantees",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "/alpenglow-verifier/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
   "display": "standalone",
-  "start_url": "/"
+  "start_url": "/alpenglow-verifier/",
+  "scope": "/alpenglow-verifier/"
 }

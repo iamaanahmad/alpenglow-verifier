@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Alpenglow Verifier</title>
+    <link rel="icon" href="/alpenglow-verifier/favicon.svg" type="image/svg+xml">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 500px;
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #3b82f6;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #e2e8f0;
+        }
+        p {
+            margin: 1rem 0;
+            color: #94a3b8;
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #2563eb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <p>You might want to visit the <a href="/alpenglow-verifier/">Alpenglow Verifier homepage</a> instead.</p>
+        <a href="/alpenglow-verifier/" class="btn">Go to Homepage</a>
+    </div>
+    
+    <script>
+        // Auto-redirect to homepage after 5 seconds
+        setTimeout(() => {
+            window.location.href = '/alpenglow-verifier/';
+        }, 5000);
+    </script>
+</body>
+</html>

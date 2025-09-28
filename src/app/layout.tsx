@@ -9,12 +9,29 @@ import { Mountain } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Alpenglow Verifier',
-  description: 'Formal Verification System for Solana Alpenglow',
+  title: 'Alpenglow Verifier - Formal Verification System',
+  description: 'World\'s first complete formal verification of Solana\'s Alpenglow consensus protocol with mathematical guarantees',
   icons: {
-    icon: '/favicon.ico'
+    icon: [
+      { url: '/alpenglow-verifier/favicon.svg', type: 'image/svg+xml' },
+      { url: '/alpenglow-verifier/favicon.ico', sizes: '32x32' }
+    ]
   },
-  manifest: '/site.webmanifest',
+  manifest: '/alpenglow-verifier/site.webmanifest',
+  keywords: ['Alpenglow', 'Solana', 'Formal Verification', 'TLA+', 'Consensus Protocol', 'Blockchain Security'],
+  authors: [{ name: 'Aman Ahmad' }],
+  creator: 'Aman Ahmad',
+  openGraph: {
+    title: 'Alpenglow Verifier - Mathematical Proof of Consensus Security',
+    description: 'World\'s first complete formal verification of Solana\'s Alpenglow consensus protocol',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alpenglow Verifier - Formal Verification System',
+    description: 'Mathematical proof that Alpenglow consensus protocol works correctly under all conditions',
+  },
 };
 
 // Force cache busting
@@ -30,9 +47,12 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" href="/alpenglow-verifier/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/alpenglow-verifier/favicon.ico" sizes="32x32" />
+        <link rel="manifest" href="/alpenglow-verifier/site.webmanifest" />
         <meta name="cache-version" content={cacheVersion.toString()} />
-        <meta name="theme-color" content="#000000" />
-        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="theme-color" content="#0f172a" />
+        <meta name="msapplication-TileColor" content="#0f172a" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={cn('antialiased min-h-screen')}>
