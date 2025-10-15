@@ -6,7 +6,6 @@
 [![Tests Passing](https://img.shields.io/badge/Tests-7%2F7_PASSING-brightgreen)](./run_complete_verification.ps1)
 [![Properties Verified](https://img.shields.io/badge/Properties-12_Verified-brightgreen)](./Properties.tla)
 [![Byzantine Tested](https://img.shields.io/badge/Byzantine-25%25_Stake_Verified-blue)](./MC_4Nodes_Byzantine.cfg)
-[![States Explored](https://img.shields.io/badge/States-80K%2B_Explored-blue)](./COUNTEREXAMPLE_ANALYSIS.md)
 [![Formal Methods](https://img.shields.io/badge/Formal_Methods-Model_Checking-blue)](./docs/)
 [![Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-green)](./LICENSE)
 
