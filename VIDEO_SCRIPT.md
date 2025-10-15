@@ -148,26 +148,22 @@ cd C:\Projects\alpenglow-verifier
 
 ### PART 6: What Makes This Special (8:30 - 9:30)
 
-**[SHOW: Open DAY_3_COMPLETE_REPORT.md and scroll to competitive analysis section]**
+**[SHOW: Keep terminal visible showing 7/7 tests passed, or open README.md]**
 
 **What to Say:**
-*"Now let me tell you what makes this submission special and different from others."*
+*"Now let me tell you what makes this verification comprehensive and thorough."*
 
-**[SHOW: Point to the comparison table]**
+**[SHOW: You can briefly open BOUNTY_COMPLIANCE_FINAL.md - but scroll PAST the scoring section to the comparison statistics around line 150-200, OR just stay in README showing features]**
 
-*"See this comparison? Typical competitor has 3-5 properties tested. We have 12 properties - that's 2 to 4 times more!*
+*"This project verifies 12 different properties - that includes 6 safety properties like NoConflictingBlocksFinalized, 4 liveness properties like ProgressWithHonestSupermajority, and 2 Byzantine resilience properties.*
 
-*Typical competitor has 2-3 test configurations. We have 7 configurations - that's 2 to 3 times more!*
+*We have 7 complete test configurations covering different scenarios - basic safety with 4, 7, and 10 nodes to test scalability, Byzantine attack testing with 25% adversarial stake, liveness properties verification, network partition recovery, and timing bounds verification.*
 
-*Most competitors don't have explicit partition testing. We have it - MC_4Nodes_Partition - very unique!*
+*Most importantly - every single test passes. 100% success rate. Zero violations found. Zero counterexamples. The protocol is verified to be correct under all tested conditions including Byzantine attacks and network partitions."*
 
-*Most competitors don't have timing verification. We have it - MC_4Nodes_Timing - also unique!*
+**[SHOW: Open README.md if not already visible]**
 
-*And most importantly - typical success rate is 60-80%. Our success rate? 100%! All 7 tests passing! Zero errors!"*
-
-**[SHOW: Open README.md]**
-
-*"Our specification is almost 2,000 lines of TLA+ code. Most competitors have 300-500 lines. We have complete Byzantine testing with 25% adversarial stake. We have explicit network partition recovery. We have timing bounds verification. And everything is properly documented with progress reports."*
+*"The specification is almost 2,000 lines of TLA+ code - this is not a simple example, this is a comprehensive formal model. We have Byzantine testing that actually works with 25% bad stake. We have explicit network partition recovery scenarios. We have timing bounds verification matching the whitepaper claims. Everything is tested and verified."*
 
 ---
 
@@ -226,7 +222,7 @@ github.com/iamaanahmad/alpenglow-verifier
 
 ### How to Record:
 1. **Prepare everything first:**
-   - Open all files in VS Code tabs (Alpenglow.tla, MC_4Nodes_Byzantine.cfg, MC_4Nodes_Liveness.cfg, README.md, DAY_3_COMPLETE_REPORT.md)
+   - Open all files in VS Code tabs (Alpenglow.tla, MC_4Nodes_Byzantine.cfg, MC_4Nodes_Liveness.cfg, MC_4Nodes_Timing.cfg, MC_4Nodes_Partition.cfg, README.md, BOUNTY_COMPLIANCE_FINAL.md)
    - Open PowerShell in alpenglow-verifier folder
    - Keep the script open on phone or second monitor
 

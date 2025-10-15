@@ -4,6 +4,6 @@ EXTENDS Alpenglow
 MC_StateConstraint ==
     /\ slot <= MaxSlot
     /\ current_time <= MaxTime
-    /\ Cardinality(DOMAIN certs) <= MaxSlot * 2
+    /\ Cardinality(certs) <= MaxSlot * 2
 
 ====
