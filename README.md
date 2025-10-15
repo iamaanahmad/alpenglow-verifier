@@ -9,7 +9,7 @@
 [![Formal Methods](https://img.shields.io/badge/Formal_Methods-Model_Checking-blue)](./docs/)
 [![Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-green)](./LICENSE)
 
-**🏆 Superteam Earn Bounty Submission - Comprehensive Formal Verification**
+**Comprehensive Formal Verification: Submission**
 
 ---
 
