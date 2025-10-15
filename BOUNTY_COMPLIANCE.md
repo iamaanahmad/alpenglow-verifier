@@ -11,8 +11,9 @@ This document demonstrates how the Alpenglow formal verification project address
 ## Requirement 1: Complete TLA+ Specification
 
 ### Implementation
-- **Alpenglow.tla**: 2,221 lines of formal specification
-- **Properties.tla**: Property definitions and invariants
+- **Alpenglow.tla**: 1,967 lines of formal specification
+- **Properties.tla**: 725 lines of property definitions and invariants
+- **Total**: 2,692 lines of TLA+ code
 
 ### Coverage
 - ✅ Votor voting mechanism (fast 80% and slow 60% paths)
@@ -144,8 +145,8 @@ Test: MC_4Nodes_Timing           ✅ PASS (Timing - Bounded finalization)
 
 ```
 alpenglow-verifier/
-├── Alpenglow.tla                      # Main protocol specification (2,221 lines)
-├── Properties.tla                     # Property definitions
+├── Alpenglow.tla                      # Main protocol specification (1,967 lines)
+├── Properties.tla                     # Property definitions (725 lines)
 ├── MC_*_Working.cfg/.tla              # Safety tests (4, 7, 10 nodes)
 ├── MC_4Nodes_Byzantine.cfg/.tla       # Byzantine attack testing
 ├── MC_4Nodes_Liveness.cfg/.tla        # Liveness verification

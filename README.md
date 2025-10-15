@@ -58,7 +58,7 @@ Alpenglow will secure billions of dollars in value on Solana. Traditional testin
 ## ✨ What We Built
 
 ### Complete TLA+ Specification
-- **1,833 lines** of formal specification modeling:
+- **1,967 lines** of formal specification modeling:
   - Votor's dual voting paths (fast 80% vs slow 60%)
   - Rotor's erasure-coded block propagation
   - Certificate generation and aggregation
@@ -198,7 +198,7 @@ See [COUNTEREXAMPLE_ANALYSIS.md](./COUNTEREXAMPLE_ANALYSIS.md) for full details.
 
 ```
 alpenglow-verifier/
-├── Alpenglow.tla              # Main protocol specification (1,833 lines)
+├── Alpenglow.tla              # Main protocol specification (1,967 lines)
 ├── Properties.tla             # Property definitions for verification
 ├── MC_*.cfg                   # Model checking configurations
 ├── MC_*.tla                   # Model instances for specific tests
