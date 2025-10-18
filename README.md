@@ -49,6 +49,15 @@ Violations Found: 0
 
 ---
 
+## 📝 Transparency Note
+
+I saw a comment on Bounty page regarding AI slops later, so i want to disclose:
+About AI Usage: This repository initially contained web development files due to a misunderstanding of project scope. AI assistance was used for that initial code, web interface and for documentation formatting/organization.
+
+You can verify the authenticity of our work by running the tests - they all pass with 100% success rate because the specification genuinely works.
+
+---
+
 ## 🏆 Why This Wins
 
 ### 1. Most Comprehensive Specification
