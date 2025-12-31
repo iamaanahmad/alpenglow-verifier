@@ -9,7 +9,7 @@
 [![Byzantine: 25% Tested](https://img.shields.io/badge/Byzantine-25%25_Tested-blue)](./MC_4Nodes_Byzantine.cfg)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-green)](./LICENSE)
 
-> **Comprehensive formal verification submission for Solana Alpenglow consensus protocol**  
+> **Comprehensive formal verification of Solana Alpenglow consensus protocol**  
 > **Status**: ✅ All 12 properties verified | 7/7 tests passing | 66M+ states explored | Zero violations
 
 ---
@@ -51,27 +51,26 @@ Violations Found: 0
 
 ## 📝 Transparency Note
 
-I saw a comment on Bounty page regarding AI slops later, so i want to disclose:
 About AI Usage: This repository initially contained web development files due to a misunderstanding of project scope. AI assistance was used for that initial code, web interface and for documentation formatting/organization.
 
 You can verify the authenticity of our work by running the tests - they all pass with 100% success rate because the specification genuinely works.
 
 ---
 
-## 🏆 Why This Wins
+## 🏆 Key Highlights
 
-### 1. Most Comprehensive Specification
+### 1. Comprehensive Specification
 - **2,221 lines** of TLA+ code (3-5x larger than typical submissions)
 - All protocol features: Votor, Rotor, certificates, timeouts, Byzantine behaviors
 - Complete network modeling: delays, partitions, partial synchrony
 
-### 2. Most Rigorous Testing
+### 2. Rigorous Testing
 - **7 test configurations** (vs typical 2-3)
 - **66M+ states explored** (vs typical 1-10M)
 - **100% success rate** with zero violations
-- **Byzantine testing exceeds requirements**: 25% vs required 20%
+- **Byzantine testing**: 25% vs 20% standard
 
-### 3. Exceeds Requirements
+### 3. Extended Coverage
 - ✅ Network partition recovery (not required, but tested)
 - ✅ Timing bounds verification (not required, but verified)
 - ✅ 25% Byzantine stake (exceeds 20% requirement)
@@ -181,7 +180,6 @@ alpenglow-verifier/
 │
 ├── README.md                          # This file
 ├── LICENSE                            # Apache 2.0 license
-├── BOUNTY_COMPLIANCE.md               # Requirements compliance
 ├── COUNTEREXAMPLE_ANALYSIS.md         # Edge case analysis
 │
 └── docs/                              # Technical documentation
@@ -235,7 +233,6 @@ java -jar tla2tools.jar -workers 4 -config MC_4Nodes_Partition.cfg MC_4Nodes_Par
 
 ### Main Documentation
 - **[README.md](./README.md)** - Project overview (this file)
-- **[BOUNTY_COMPLIANCE.md](./BOUNTY_COMPLIANCE.md)** - Requirements compliance
 - **[COUNTEREXAMPLE_ANALYSIS.md](./COUNTEREXAMPLE_ANALYSIS.md)** - Edge case analysis
 
 ### Technical Documentation
@@ -248,9 +245,9 @@ java -jar tla2tools.jar -workers 4 -config MC_4Nodes_Partition.cfg MC_4Nodes_Par
 
 ---
 
-## 🎯 Bounty Requirements Met
+## 🎯 Verification Summary
 
-### ✅ Requirement 1: Complete Formal Specification (25/25)
+### ✅ Complete Formal Specification
 - Votor's dual voting paths (fast 80% + slow 60%)
 - Rotor's erasure-coded block propagation
 - Certificate generation and aggregation
@@ -258,25 +255,22 @@ java -jar tla2tools.jar -workers 4 -config MC_4Nodes_Partition.cfg MC_4Nodes_Par
 - Leader rotation and window management
 - Byzantine behaviors explicitly modeled
 
-### ✅ Requirement 2: Machine-Verified Theorems (40/40)
+### ✅ Machine-Verified Theorems
 - **Safety**: All 6 properties verified across 66M+ states
 - **Liveness**: All 4 properties verified with fairness constraints
 - **Resilience**: All 2 properties verified with Byzantine testing
 
-### ✅ Requirement 3: Model Checking & Validation (25/25)
+### ✅ Model Checking & Validation
 - Exhaustive verification for small configurations (4 nodes)
 - Strategic sampling for larger configurations (7-10 nodes)
 - 7 test configurations covering all scenarios
 - 100% test success rate with zero violations
 
-### ✅ Requirement 4: Deliverables & Documentation (8/10)
+### ✅ Complete Deliverables
 - Complete GitHub repository with all code
 - Comprehensive documentation (10+ documents)
 - Reproducible verification scripts
 - Apache 2.0 open source license
-- Professional presentation
-
-**Total Score**: 98/100 (A+)
 
 ---
 
@@ -360,7 +354,6 @@ This project is open source and available for:
 
 - **Solana Foundation** - Alpenglow protocol design
 - **TLA+ Community** - Excellent formal verification tools
-- **Superteam Earn** - Bounty opportunity
 - **Leslie Lamport** - Temporal logic foundations
 
 ---
@@ -369,7 +362,6 @@ This project is open source and available for:
 
 - **GitHub Issues**: [Report issues or ask questions](https://github.com/iamaanahmad/alpenglow-verifier/issues)
 - **Documentation**: See [docs/](./docs/) folder for detailed guides
-- **Bounty Compliance**: See [BOUNTY_COMPLIANCE.md](./BOUNTY_COMPLIANCE.md)
 
 ---
 
@@ -382,7 +374,7 @@ This project is open source and available for:
 ✅ **7 test configurations** (multi-node, Byzantine, liveness, partition, timing)  
 ✅ **66M+ states** explored with zero violations  
 ✅ **100% test success** rate (7/7 passing)  
-✅ **25% Byzantine** stake tested (exceeds 20% requirement)  
+✅ **25% Byzantine** stake tested (beyond 20% standard)  
 ✅ **Network partition** recovery explicitly verified  
 ✅ **Timing bounds** verified (min(δ₈₀%, 2δ₆₀%))  
 ✅ **10+ documents** of comprehensive documentation  
@@ -392,5 +384,5 @@ This project is open source and available for:
 
 ---
 
-*Last Updated: October 18, 2025*  
-*Status: ✅ All tests passing | Thanks to Superteam India for this experience*
+*Last Updated: December 30, 2025*  
+*Status: ✅ All tests passing*

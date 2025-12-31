@@ -265,7 +265,7 @@ Features:
 GitHub: https://github.com/iamaanahmad/alpenglow-verifier
 License: Apache 2.0
 
-Bounty submission for Solana Alpenglow formal verification.
+Formal verification of Solana Alpenglow consensus protocol.
 ```
 
 **Visibility**: **Unlisted** (not public, but accessible via link)
